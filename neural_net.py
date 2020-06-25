@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 train_data = pd.read_csv('../Basic_Nueral_Network_model-Titanic_Dataset/train.csv')
 test_data = pd.read_csv('../Basic_Nueral_Network_model-Titanic_Dataset/test.csv')
 
-# print(train_data.shape, test_data.shape)
+print(train_data.shape, test_data.shape)
 
 train_data=train_data.fillna(train_data.mean())
 test_data=test_data.fillna(test_data.mean())
@@ -44,16 +44,16 @@ print(accuracy)
 
 predict_value = model.predict_classes(X_test)
 accu = accuracy_score(y_test, predict_value.round())
-# print(accu)
+print(accu)
 
-# for i in range(5):
-	# print(' %d (expected %d)' % (predict_value[i], target_value[i]))
+for i in range(5):
+	print(' %d (expected %d)' % (predict_value[i], target_value[i]))
 
 
 predict_value_test = model.predict_classes(fe_array)
 accu2 = accuracy_score(target_value[:418], predict_value_test.round())
-# print(accu2)
+print(accu2)
 
-# for i in range(5):
-	# print(' %d (expected %d)' % ( predict_value_test[i], target_value[i]))
+for i in range(5):
+	print(' %d (expected %d)' % ( predict_value_test[i], target_value[i]))
 
